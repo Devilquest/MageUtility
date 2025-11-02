@@ -2,7 +2,7 @@
 
 A lightweight and intuitive addon for World of Warcraft Vanilla 1.12 that consolidates Mage teleports, portals, and mana gems into a single, efficient interface.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![WoW Version](https://img.shields.io/badge/wow-1.12.x-orange.svg)
 ![Class](https://img.shields.io/badge/class-Mage-69ccf0.svg)
 
@@ -11,8 +11,9 @@ A lightweight and intuitive addon for World of Warcraft Vanilla 1.12 that consol
 - **Organized Interface**: All teleports, portals, and mana gems displayed in a clean, sectioned window
 - **Rune Counter**: Real-time display of available teleportation and portal runes
 - **Smart Behavior**: 
-  - Window closes after casting teleports/portals
-  - Window remains open when conjuring mana gems for quick successive casting
+  - Configurable window closing behavior via constants in `MageUtility.lua`
+  - By default: Window closes after casting teleports/portals, remains open for mana gems
+  - Easy customization: Change `MageUtility.CloseOnCast` values to control each spell type
 - **Dynamic Width**: Window automatically adjusts its width based on the number of spells available
 - **Per-Character Settings**: Window position is saved individually for each character
 - **Faction Detection**: Automatically displays only spells relevant to your faction (Alliance/Horde)
@@ -107,6 +108,31 @@ Each button shows:
 - [Mana Ruby](https://www.wowhead.com/classic/spell=10054) (Level 58)
 
 ## Customization
+
+### Window Close Behavior
+
+You can control whether the window closes after casting spells by editing `MageUtility.lua`:
+
+```lua
+-- Window close behavior constants
+MageUtility.CloseOnCast = {
+    TELEPORTS = true,   -- Set to false to keep window open after teleporting
+    PORTALS = true,     -- Set to false to keep window open after creating portals
+    MANAGEMS = false    -- Set to true to close window after conjuring gems
+}
+```
+
+**Default Behavior:**
+- **Teleports**: Window closes (useful for quick travel)
+- **Portals**: Window closes (useful for quick portal creation)
+- **Mana Gems**: Window stays open (useful for conjuring multiple gems quickly)
+
+**Example Use Cases:**
+- Set all to `false` if you want the window to always stay open
+- Set `MANAGEMS = true` if you only conjure one gem at a time
+- Mix and match based on your playstyle!
+
+### Adding New Spells
 
 The addon is designed to be easily extensible. You can add new spells by editing the data files located in the `Modules/` directory.
 
@@ -264,6 +290,11 @@ MageUtility/
 ---
 
 ## Changelog
+
+### v1.1.0
+- Added configurable window close behavior via `MageUtility.CloseOnCast` constants
+- Users can now customize whether the window closes after casting Teleports, Portals, or Mana Gems
+- Improved code maintainability with centralized configuration
 
 ### v1.0.0
 - Initial release

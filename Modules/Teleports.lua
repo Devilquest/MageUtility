@@ -2,6 +2,13 @@
 
 MageUtility.Teleports = {}
 
+-- Get close behavior from constants
+function MageUtility.Teleports:GetCloseOnCast()
+    return MageUtility.CloseOnCast.TELEPORTS
+end
+
+MageUtility.Teleports.closeOnCast = MageUtility.CloseOnCast.TELEPORTS
+
 -- Teleport spell data
 MageUtility.Teleports.Data = {
     Alliance = {

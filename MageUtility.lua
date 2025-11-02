@@ -2,7 +2,7 @@
 -- Main addon initialization and event handling
 
 local ADDON_NAME = "Mage Utility"
-local ADDON_VERSION = "1.0.0"
+local ADDON_VERSION = "1.1.0"
 
 if not MageUtility then
     MageUtility = {}
@@ -19,6 +19,13 @@ MageUtility.Colors = {
 MageUtility.Reagents = {
     TELEPORT_RUNE = {id = 17031, name = "Rune of Teleportation", count = 1},
     PORTAL_RUNE = {id = 17032, name = "Rune of Portals", count = 1}
+}
+
+-- Window close behavior constants
+MageUtility.CloseOnCast = {
+    TELEPORTS = true,
+    PORTALS = true,
+    MANAGEMS = false
 }
 
 MageUtility.playerFaction = nil

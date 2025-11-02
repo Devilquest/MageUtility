@@ -2,6 +2,13 @@
 
 MageUtility.Portals = {}
 
+-- Get close behavior from constants
+function MageUtility.Portals:GetCloseOnCast()
+    return MageUtility.CloseOnCast.PORTALS
+end
+
+MageUtility.Portals.closeOnCast = MageUtility.CloseOnCast.PORTALS
+
 -- Portal spell data
 MageUtility.Portals.Data = {
     Alliance = {

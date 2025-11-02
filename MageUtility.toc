@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: Mage Utility
 ## Notes: Mage teleport, portal and mana gem interface
-## Version: 1.0
+## Version: 1.1.0
 ## Author: Devilquest
 ## X-Website: https://github.com/Devilquest/MageUtility
 ## SavedVariablesPerCharacter: MageUtility_Config

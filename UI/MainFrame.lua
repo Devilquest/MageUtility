@@ -367,8 +367,8 @@ function MageUtility.UI:OnButtonClick(button)
         -- Cast the spell
         button.module:Cast(button.spellData)
         
-        -- Only hide window for Teleports and Portals, not for Mana Gems
-        if button.module ~= MageUtility.ManaGems then
+        -- Close window based on module's closeOnCast setting
+        if button.module.closeOnCast then
             self:Hide()
         end
     end

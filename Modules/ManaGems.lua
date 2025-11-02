@@ -2,6 +2,13 @@
 
 MageUtility.ManaGems = {}
 
+-- Get close behavior from constants
+function MageUtility.ManaGems:GetCloseOnCast()
+    return MageUtility.CloseOnCast.MANAGEMS
+end
+
+MageUtility.ManaGems.closeOnCast = MageUtility.CloseOnCast.MANAGEMS
+
 -- Mana Gem spell data (no faction dependency, no reagents)
 MageUtility.ManaGems.Data = {
     {
